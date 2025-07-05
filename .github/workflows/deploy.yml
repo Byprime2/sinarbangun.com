@@ -19,10 +19,10 @@ jobs:
       - name: 🏗️ Build static site
         run: npm run build
 
-      - name: 🧪 Debug output folder
+      - name: 🧪 Debug isi folder out/
         run: ls -la out
 
-      - name: 📤 Upload via SSH using rsync
+      - name: 📤 Upload dengan rsync ke Hostinger
         uses: burnett01/rsync-deployments@5.2
         with:
           switches: -avz --delete
@@ -33,7 +33,7 @@ jobs:
           remote_key: ${{ secrets.HOSTINGER_SSH_KEY }}
           remote_port: 65002
 
-      - name: 🛠️ Fix file & folder permissions (chmod)
+      - name: 🛠️ Fix permission (chmod)
         uses: appleboy/ssh-action@master
         with:
           host: 145.79.14.76
@@ -44,3 +44,13 @@ jobs:
             chmod 755 public_html
             find public_html -type d -exec chmod 755 {} \;
             find public_html -type f -exec chmod 644 {} \;
+
+      - name: 🔍 Cek isi public_html (opsional)
+        uses: appleboy/ssh-action@master
+        with:
+          host: 145.79.14.76
+          username: u240274568
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: 65002
+          script: |
+            ls -la public_html
