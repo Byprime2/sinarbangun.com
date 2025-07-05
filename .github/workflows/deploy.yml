@@ -30,7 +30,7 @@ jobs:
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: 65002
           source: "out/**"
-          target: "./public_html"
+          target: "/home/u240274568/public_html"
           strip_components: 1
 
       - name: 🔍 Check files on Hostinger (optional)
