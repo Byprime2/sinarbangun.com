@@ -21,10 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build and export static site
-        run: |
-          npm run build
-          npx next export
+      - name: Build static site (Next.js 15)
+        run: npm run build
 
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
