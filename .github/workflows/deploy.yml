@@ -24,7 +24,7 @@ jobs:
       - name: Build static site (Next.js 15)
         run: |
           npm run build
-          cp -r public/* out/
+          cp -r public/. out/
 
       - name: Deploy to FTP Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
