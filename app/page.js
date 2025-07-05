@@ -72,7 +72,7 @@ export default function Home() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }}>
             <video width="1080" autoPlay muted loop controls className="rounded-2xl shadow-lg border border-white/30">
-              <source src="/videos/Iklan.mp4" type="video/mp4" />
+              <source src="/videos/Iklan1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </motion.div>
