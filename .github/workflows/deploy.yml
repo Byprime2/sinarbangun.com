@@ -22,9 +22,10 @@ jobs:
       - name: 📤 Upload via SCP
         uses: appleboy/scp-action@master
         with:
-          host: 145.79.14.76 # ganti sesuai Hostinger kamu
-          username: u240274568 # ganti sesuai Hostinger kamu
+          host: 145.79.14.76
+          username: u240274568
           key: ${{ secrets.HOSTINGER_SSH_KEY }}
           port: 65002
-          source: "out/*"
-          target: "public_html"
+          source: "out/**"
+          target: "./public_html"
+          strip_components: 1
