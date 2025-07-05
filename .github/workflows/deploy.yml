@@ -19,6 +19,9 @@ jobs:
       - name: 🏗️ Build static site
         run: npm run build
 
+      - name: 🧪 Debug output folder
+        run: ls -la out
+
       - name: 📤 Upload via SCP
         uses: appleboy/scp-action@master
         with:
@@ -29,3 +32,13 @@ jobs:
           source: "out/**"
           target: "./public_html"
           strip_components: 1
+
+      - name: 🔍 Check files on Hostinger (optional)
+        uses: appleboy/ssh-action@master
+        with:
+          host: 145.79.14.76
+          username: u240274568
+          key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          port: 65002
+          script: |
+            ls -la public_html
