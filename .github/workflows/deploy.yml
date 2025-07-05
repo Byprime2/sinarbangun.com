@@ -22,6 +22,17 @@ jobs:
       - name: 🧪 Debug output folder
         run: ls -la out
 
+      - name: 📤 Upload via SSH using rsync
+        uses: burnett01/rsync-deployments@5.2
+        with:
+          switches: -avz --delete
+          path: out/
+          remote_path: public_html
+          remote_host: 145.79.14.76
+          remote_user: u240274568
+          remote_key: ${{ secrets.HOSTINGER_SSH_KEY }}
+          remote_port: 65002
+
       - name: 🛠️ Fix file & folder permissions (chmod)
         uses: appleboy/ssh-action@master
         with:
