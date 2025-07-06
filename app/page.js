@@ -1,6 +1,6 @@
-"use client";
+/* eslint-disable @next/next/no-img-element */
 
-import Image from "next/image";
+"use client";
 
 import DataImage from "@/public/data";
 
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20 z-0"></div>
         <AnimatePresence>
           <motion.div key={heroImages[index]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="absolute inset-0 w-full h-full">
-            <Image src={heroImages[index]} alt="Hero Image" priority fill className="object-cover object-center" />
+            <img src={heroImages[index]} alt="Hero Image" priority fill className="object-cover object-center" />
           </motion.div>
         </AnimatePresence>
 
@@ -72,7 +72,7 @@ export default function Home() {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }}>
             <video width="1080" autoPlay muted loop controls className="rounded-2xl shadow-lg border border-white/30">
-              <source src="/videos/Iklan1.mp4" type="video/mp4" />
+              <source src="/videos/iklan1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </motion.div>
