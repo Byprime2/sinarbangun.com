@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import DataImage from "../public/data";
 
@@ -98,7 +98,7 @@ export default function Navbar() {
       >
         {/* ======= KIRI: LOGO ======= */}
         <div className="flex items-center gap-3">
-          <Image src={DataImage.logo1} alt="logo" className="md:w-10 md:h-10 w-15 h-15 rounded-full" />
+          <img src={DataImage.logo1} alt="logo" className="md:w-10 md:h-10 w-15 h-15 rounded-full" />
           <div className="flex-col md:flex-row">
             <h1 className="text-1xl lg:text-2xl font-bold text-blue-950">PT. SINAR BANGUN TATA SEMESTA</h1>
             <p className=" text-blue-950 font-semibold text-xs italic font-serif">General steel supplier</p>
@@ -155,7 +155,7 @@ export default function Navbar() {
       transition={{ duration: 0.4 }}
       className="flex-col lg:flex-row z-50 fixed bottom-15 right-6 bg-blue-900 text-white shadow-xl rounded-2xl flex items-center lg:gap-2 px-4 py-3"
     >
-      <Image src={DataImage.logo1} alt="logo" className="w-8 h-8 bg-white rounded-full" />
+      <img src={DataImage.logo1} alt="logo" className="w-8 h-8 bg-white rounded-full" />
       <Link href="#home" className="hover:text-blue-800 hover:bg-white px-2 py-3 rounded-2xl">
         Home
       </Link>
