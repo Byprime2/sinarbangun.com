@@ -1,6 +1,4 @@
 "use client";
-
-import Image from "next/image";
 import DataImage from "../public/data";
 import { useState, useEffect } from "react";
 
@@ -16,7 +14,7 @@ const PreLoader = () => {
       <div className="w-screen h-screen fixed flex items-center justify-center bg-white z-50">
         <div className="flex flex-col items-center justify-center space-y-6">
           {/* Logo */}
-          <Image src={DataImage.logo1} alt="logo" className="w-16 h-16 rounded-full" priority />
+          <img src={DataImage.logo1} alt="logo" className="w-16 h-16 rounded-full" priority />
 
           {/* Nama Perusahaan */}
           <h1 className="text-xl lg:text-2xl font-bold text-blue-950 text-center">PT. Sinar Bangun Tata Semesta</h1>
