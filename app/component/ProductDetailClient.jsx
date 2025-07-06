@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductDetailClient({ produk }) {
@@ -28,13 +29,13 @@ export default function ProductDetailClient({ produk }) {
         {/* Gambar */}
         <div>
           <div className="relative w-full aspect-[4/3] bg-gray-700 rounded-xl overflow-hidden shadow">
-            <Image src={selectedImage} alt={produk.title} fill className="object-contain p-6" />
+            <img src={selectedImage} alt={produk.title} fill className="object-contain p-6" />
           </div>
           {produk.images?.length > 1 && (
             <div className="flex gap-3 mt-4 overflow-x-auto">
               {produk.images.map((img, idx) => (
                 <button key={idx} className={`w-20 h-20 border rounded-md overflow-hidden ${selectedImage === img ? "border-blue-300" : "border-gray-500"}`} onClick={() => setSelectedImage(img)}>
-                  <Image src={img} alt={idx} width={80} height={80} className="object-contain w-full h-full" />
+                  <img src={img} alt={idx} width={80} height={80} className="object-contain w-full h-full" />
                 </button>
               ))}
             </div>

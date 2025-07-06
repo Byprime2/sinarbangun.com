@@ -97,7 +97,7 @@ export default function Home() {
             {produkTampil.map((produk, idx) => (
               <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-md">
                 <div className="relative w-full h-[200px]">
-                  <Image src={produk.image} alt={produk.title} fill className="rounded-2xl p-3" />
+                  <img src={produk.image} alt={produk.title} fill className="rounded-2xl p-3" />
                 </div>
                 <div className="p-4 text-center">
                   <h2 className="font-semibold text-lg mb-2">{produk.title}</h2>
@@ -160,7 +160,7 @@ export default function Home() {
           <div className="mt-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-5">
             {listBerita.map((berita, index) => (
               <motion.a key={index} href={berita.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="block bg-white rounded-2xl shadow-2xl overflow-hidden p-5">
-                <Image src={berita.gambar} alt={berita.judul} className="w-full h-70 object-cover rounded-2xl" />
+                <img src={berita.gambar} alt={berita.judul} className="w-full h-70 object-cover rounded-2xl" />
                 <div className="p-4">
                   <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full uppercase font-semibold tracking-wide">{berita.kabar}</span>
                   <h2 className="text-xl font-semibold text-black mt-2">{berita.judul}</h2>
@@ -253,7 +253,7 @@ export default function Home() {
         {/* Kolom 1 */}
         <div className="flex-col md:items-start lg:text-left text-center items-center">
           <div className="flex lg:flex-row flex-col gap-2 items-center">
-            <Image src={DataImage.logo1} alt="Logo Image" priority className="w-10 h-10 relative" />
+            <img src={DataImage.logo1} alt="Logo Image" priority className="w-10 h-10 relative" />
             <div className="flex-col md:flex-row">
               <h2 className="sm:text-2xl/tight text-2xl font-bold">PT. SINAR BANGUN TATA SEMESTA</h2>
               <p className="font-semibold text-xs italic font-serif">General steel supplier</p>
