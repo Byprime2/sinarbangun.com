@@ -65,7 +65,7 @@ export default function ProductDetailClient({ produk }) {
 
           {/* Tombol Aksi */}
           <div className="flex gap-4 mt-6 flex-wrap">
-            <Link href="https://wa.me/6281234567890" target="_blank">
+            <Link href="https://wa.me/6282114064622" target="_blank">
               <button className="inline-block bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-800 transition">
                 WhatsApp <i className="ri-whatsapp-fill ri-1x pointer cursor-pointer"></i>
               </button>
