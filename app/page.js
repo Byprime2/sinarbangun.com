@@ -54,14 +54,14 @@ export default function Home() {
       <div className="mt-20 container mx-auto px-4" id="tentang">
         {/* Accent bar di atas kartu */}
         <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
-        <motion.h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
+        <h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
           TENTANG KAMI
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center mt-5 italic">
+        </h1>
+        <p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center mt-5 italic">
           Dalam dunia konstruksi dan industri, kualitas material adalah kunci utama dalam menciptakan hasil yang tangguh dan berkelanjutan.
-        </motion.p>
+        </p>
         <div className="mt-15 grid lg:grid-cols-2 md:grid-cols-1 gap-10">
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="">
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="">
             <h1 className="font-semibold text-2xl mb-3">PT.Sinar Bangun Tata Semesta</h1>
             <p className="text-base/loose">
               Bergerak dalam bidang distribusi material besi, untuk fabrikasi dan konstruksi sejak 1996. Sebagai distributor besi, kami selalu memberikan komitmen, kepada pelanggan berupa pelayanan, dan produk terbaik kepada konsumen.
@@ -71,13 +71,13 @@ export default function Home() {
                 Lihat Produk
               </Link>
             </div>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }}>
+          </div>
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }}>
             <video width="1080" autoPlay muted loop controls className="rounded-2xl shadow-lg border border-white/30">
               <source src="/videos/iklan1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          </motion.div>
+          </div>
         </div>
       </div>
       {/* End Tentang */}
@@ -87,13 +87,13 @@ export default function Home() {
         {/* Accent bar di atas kartu */}
         <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
 
-        <motion.h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
+        <h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
           PRODUK
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center italic">
+        </h1>
+        <p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center italic">
           Kami menghadirkan berbagai pilihan produk berkualitas tinggi yang dirancang untuk memenuhi standar industri dan konstruksi. Setiap produk kami dipilih dengan cermat untuk memastikan ketahanan, mutu, dan keandalan yang optimal bagi
           kebutuhan proyek Anda.
-        </motion.p>
+        </p>
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {produkTampil.map((produk, idx) => (
@@ -123,26 +123,26 @@ export default function Home() {
       {/* Layanan */}
       <div className="mt-10 lg:mt-0 mx-auto px-4">
         <div className="grid lg:grid-cols-4 mt-32 gap-2 md:grid-cols-2 justify-items-center" id="layanan">
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.5 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.5 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
             <i className="ri-service-fill ri-3x text-shadow-zinc-500"></i>
             <p className="font-semibold text-2xl/normal mb-2">Komitmen</p>
             <p className="text-base/loose">Sejak 1996, kami selalu konsisten menyediakan besi dan baja berkualitas tinggi dengan layanan yang dapat diandalkan dan bertanggung jawab.</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.7 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
+          </div>
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.7 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
             <i className="ri-verified-badge-fill ri-3x text-shadow-zinc-500"></i>
             <p className="font-semibold text-2xl/normal mb-2">Terpercaya</p>
             <p className="text-base/loose">Kami menjaga kepercayaan pelanggan melalui keaslian material, harga transparan, dan keamanan transaksi serta pengiriman.</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
+          </div>
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
             <i className="ri-price-tag-3-fill ri-3x text-shadow-zinc-500"></i>
             <p className="font-semibold text-2xl/normal mb-2">Harga Bersaing</p>
             <p className="text-base/loose">Dengan pengalaman dan jaringan luas, kami mampu menawarkan harga bersaing tanpa mengorbankan kualitas.</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
+          </div>
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-7 rounded-2xl">
             <i className="ri-mail-send-fill ri-3x text-shadow-zinc-500"></i>
             <p className="font-semibold text-2xl/normal mb-2">Pengiriman Cepat</p>
             <p className="text-base/loose">Didukung armada sendiri dan sistem logistik efisien, kami pastikan pengiriman cepat, tepat, dan aman.</p>
-          </motion.div>
+          </div>
         </div>
       </div>
       {/* End Layanan */}
@@ -151,17 +151,17 @@ export default function Home() {
       <div className="relative mt-20 shadow-5xl mx-auto px-4 p-10" id="blog" style={{ backgroundImage: "url('/assets/slide3.webp')", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="absolute inset-0 bg-black/20 z-0"></div>
         <div className="relative z-10 text-white">
-          <motion.h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold " id="proyek">
+          <h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold " id="proyek">
             BLOGS
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center container mx-auto px-4 italic">
+          </h1>
+          <p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center container mx-auto px-4 italic">
             Blog ini kami hadirkan untuk menjawab kebutuhan informasi Anda seputar dunia besi dan baja. Mulai dari tips pemilihan produk, keunggulan material, hingga inspirasi proyek — semua kami rangkum demi membantu Anda membuat keputusan
             yang tepat.
-          </motion.p>
+          </p>
 
           <div className="mt-10 grid lg:grid-cols-3 md:grid-cols-2 gap-10 p-5">
             {listBerita.map((berita, index) => (
-              <motion.a key={index} href={berita.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="block bg-white rounded-2xl shadow-2xl overflow-hidden p-5">
+              <a key={index} href={berita.link} target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }} className="block bg-white rounded-2xl shadow-2xl overflow-hidden p-5">
                 <img src={berita.gambar} alt={berita.judul} className="w-full h-70 object-cover rounded-2xl" />
                 <div className="p-4">
                   <span className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full uppercase font-semibold tracking-wide">{berita.kabar}</span>
@@ -169,7 +169,7 @@ export default function Home() {
                   <p className="text-gray-700 mt-2">{berita.deskripsi}</p>
                   <p className="mt-4 text-blue-700 font-semibold hover:underline">Lihat Selengkapnya →</p>
                 </div>
-              </motion.a>
+              </a>
             ))}
           </div>
         </div>
@@ -181,15 +181,15 @@ export default function Home() {
         {/* Accent bar di atas kartu */}
         <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
 
-        <motion.h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
+        <h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold ">
           KONTAK
-        </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center italic">
+        </h1>
+        <p initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-base/loose text-center italic">
           Hubungi Kami, untuk mendapatkan penawaran terbaik hari ini !.
-        </motion.p>
+        </p>
 
         <div className="mt-10 grid lg:grid-cols-2 grid-cols-1 gap-4">
-          <motion.form
+          <form
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 100, y: 0 }}
             transition={{ delay: 0.9 }}
@@ -224,9 +224,9 @@ export default function Home() {
                 </button>
               </div>
             </div>
-          </motion.form>
+          </form>
 
-          <motion.div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-10 sm:w-fit mx-auto rounded-md max-w w-full">
+          <div initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="shadow-2xl p-10 sm:w-fit mx-auto rounded-md max-w w-full">
             <h2 className="font-semibold">Alamat Kami</h2>
             <p>H. zaenal, Jl. K Utara Jl. Kyai Haji Zainul Arifin No.78, RT.3/RW.14, Tanah Sereal, Jakarta, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11210</p>
             <div style={{ marginTop: "20px" }}>
@@ -245,7 +245,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       {/* End Kontak */}
