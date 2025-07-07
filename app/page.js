@@ -29,15 +29,16 @@ export default function Home() {
   return (
     <>
       {/* Image hero */}
-      <section className="relative w-full h-[100vh] md:h-[100vh] overflow-hidden text-shadow-2xl">
+      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center text-center text-shadow-2xl">
         <div className="absolute inset-0 bg-black/20 z-0"></div>
+
         <AnimatePresence>
           <motion.div key={heroImages[index]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="absolute inset-0 w-full h-full">
-            <img src={heroImages[index]} alt="Hero Image" priority fill className="object-cover object-center" />
+            <img src={heroImages[index]} alt="Hero Image" className="w-full h-full object-cover object-center" />
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+        <div className="relative z-10 flex flex-col items-center justify-center px-4 py-10 sm:py-20">
           <p className="mt-4 text-base md:text-lg text-white drop-shadow-lg italic">Distributor besi dan baja sejak tahun 1996</p>
           <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">PT.SINAR BANGUN TATA SEMESTA</h1>
           <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">Solusi kebutuhan besi anda.</h2>
@@ -46,6 +47,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
       {/* End Image hero */}
 
       {/* Tentang */}
