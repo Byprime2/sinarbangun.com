@@ -13,33 +13,6 @@ const Image = {
 
 export default Image;
 
-export const listBerita = [
-  {
-    judul: "Harga Terus Melambung, Bursa Suspensi Saham Krakatau Steel (KRAS)",
-    deskripsi: "Bursa Efek Indonesia (BEI) melakukan suspensi atas perdagangan saham PT Krakatau Steel (Persero) Tbk. (KRAS) akibat kenaikan harga yang signifikan.",
-    id: 1,
-    gambar: "/berita/berita1.jpg",
-    link: "https://market.bisnis.com/read/20250701/7/1889429/harga-terus-melambung-bursa-suspensi-saham-krakatau-steel-kras",
-    kabar: "01 Juni 2025",
-  },
-  {
-    judul: "Nippon Steel Pertimbangkan Terbitkan Saham Baru untuk Danai Akuisisi US Steel",
-    deskripsi: "Nippon Steel mempertimbangkan penerbitan saham baru untuk membantu dana akuisisi US Steel, tanpa merugikan investor eksisting dan dilusi laba per saham.",
-    id: 2,
-    gambar: "/berita/berita2.jpg",
-    link: "https://ekonomi.bisnis.com/read/20250619/620/1886548/nippon-steel-pertimbangkan-terbitkan-saham-baru-untuk-danai-akuisisi-us-steel",
-    kabar: "01 Juni 2025",
-  },
-  {
-    judul: "Kanada Tunda Balas Tarif Impor Baja dan Alumunium AS, Ini Sebabnya.",
-    deskripsi: "Kanada memilih untuk menahan tindakan balasan terkait penggandaan tarif baja dan aluminium oleh Presiden AS, Donald Trump.",
-    id: 3,
-    gambar: "/berita/berita3.jpg",
-    link: "https://ekonomi.bisnis.com/read/20250605/620/1882637/kanada-tunda-balas-tarif-impor-baja-dan-alumunium-as-ini-sebabnya",
-    kabar: "01 Juni 2025",
-  },
-];
-
 // Proyek
 export const listProduk = [
   {

@@ -108,19 +108,12 @@ export default function Navbar() {
         {/* ======= KANAN: MENU ======= */}
         <nav className="hidden lg:flex items-center gap-10 sm:text-2xl text-1xl">
           {[
-            { href: "#home", label: "HOME" },
-            { href: "#tentang", label: "TENTANG KAMI" },
-            { href: "#produk", label: "PRODUK" },
-            { href: "#blog", label: "BLOGS" },
+            { href: "/", label: "HOME" },
+            { href: "/#tentang", label: "TENTANG KAMI" },
+            { href: "/#produk", label: "PRODUK" },
+            { href: "/#blog", label: "BLOGS" },
           ].map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="
-              text-sm font-semibold tracking-wider uppercase
-              text-gray-800 hover:p-5 hover:bg-blue-950 hover:text-white transition-colors
-            "
-            >
+            <Link key={link.href} href={link.href} className="text-sm font-semibold tracking-wider uppercase text-gray-800 hover:p-5 hover:bg-blue-950 hover:text-white transition-colors">
               {link.label}
             </Link>
           ))}

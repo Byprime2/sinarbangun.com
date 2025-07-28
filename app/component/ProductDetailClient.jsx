@@ -10,9 +10,7 @@ export default function ProductDetailClient({ produk }) {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-gray-900 via-slate-800 to-blue-900 text-white py-12 px-4">
       <div className="lg:mb-0 mb-5">
-        <h1 initial={{ opacity: 0, y: 100 }} whileInView={{ opacity: 100, y: 0 }} transition={{ delay: 0.9 }} viewport={{ once: true }} className="text-4xl/normal text-center font-semibold mt-15">
-          {produk.title}
-        </h1>
+        <h1 className="text-4xl/normal text-center font-semibold mt-15">{produk.title}</h1>
       </div>
       {/* Breadcrumb */}
       <div className="text-sm text-gray-300 mb-6 ">
@@ -29,7 +27,7 @@ export default function ProductDetailClient({ produk }) {
         {/* Gambar */}
         <div>
           <div className="relative w-full aspect-[4/3] bg-gray-700 rounded-xl overflow-hidden shadow">
-            <img src={selectedImage} alt={produk.title} fill className="object-contain p-6" />
+            <img src={selectedImage} alt={produk.title} className="object-contain p-6" />
           </div>
           {produk.images?.length > 1 && (
             <div className="flex gap-3 mt-4 overflow-x-auto">
