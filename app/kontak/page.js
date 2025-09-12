@@ -45,7 +45,7 @@ export default function KontakPage() {
               <h2 className="text-2xl font-semibold mb-4">Informasi Perusahaan</h2>
               <p className="text-gray-700">📍 Alamat: H. zaenal, Jl. K Utara Jl. Kyai Haji Zainul Arifin No.78, RT.3/RW.14, Tanah Sereal, Jakarta, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11210</p>
               <p className="text-gray-700">📧 Email: primaakusumah.sbts@gmail.com</p>
-              <p className="text-gray-700">📞 Telepon: (021) 12345678</p>
+              <p className="text-gray-700">📞 Telepon: (021)</p>
             </div>
           </div>
         </div>

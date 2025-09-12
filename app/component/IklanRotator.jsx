@@ -4,7 +4,7 @@ import React, { useEffect, useState, useMemo } from "react";
 
 const IklanRotator = () => {
   // Gambar iklan 1080x1920 px
-  const iklanImages = useMemo(() => ["/images/iklan1.png", "/images/iklan2.png", "/images/iklan3.png"], []);
+  const iklanImages = useMemo(() => ["/images/iklan1.png", "/images/iklan2.png", "/images/iklan3.png", "/images/iklan4.png", "/images/iklan5.png", "/images/iklan7.png"], []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
