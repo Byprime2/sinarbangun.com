@@ -3,16 +3,10 @@
 "use client";
 
 import DataImage from "@/public/data";
-
 import Link from "next/link";
-
 import { useState, useEffect } from "react";
-
 import { listProduk } from "@/public/data";
-
 import BlogSection from "./component/BlogSection";
-
-// React Server Components
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
@@ -24,268 +18,290 @@ export default function Home() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(timer);
-  });
+  }, [heroImages.length]);
 
   return (
-    <>
-      {/* Image hero */}
-      <section className="relative w-full min-h-screen overflow-hidden flex items-center justify-center text-center text-shadow-2xl">
-        <div className="absolute inset-0 bg-black/20 z-0"></div>
-
-        <AnimatePresence>
-          <motion.div key={heroImages[index]} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }} className="absolute inset-0 w-full h-full">
-            <img src={heroImages[index]} alt="Hero Image" className="w-full h-full object-cover object-center" />
+    <div className="bg-slate-50 text-slate-900 font-sans selection:bg-blue-100">
+      
+      {/* 1. HERO SECTION */}
+      <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={heroImages[index]} 
+            initial={{ scale: 1.1, opacity: 0 }} 
+            animate={{ scale: 1, opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            transition={{ duration: 1.5 }} 
+            className="absolute inset-0"
+          >
+            <img src={heroImages[index]} alt="Hero" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-slate-50"></div>
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-10 flex flex-col items-center justify-center px-4 py-10 sm:py-20">
-          <p className="mt-4 text-base md:text-lg text-white drop-shadow-lg italic">Distributor besi dan baja sejak tahun 1996</p>
-          <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg">PT.SINAR BANGUN TATA SEMESTA</h1>
-          <h2 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">Solusi kebutuhan besi anda.</h2>
-          <Link href={"#produk"} className="mt-6 bg-blue-600 w-fit rounded-md p-3 hover:bg-blue-800 text-white cursor-pointer">
-            Lihat Produk
-          </Link>
+        <div className="relative z-10 px-4 max-w-5xl mx-auto text-center">
+          <motion.p 
+            initial={{ y: 20, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }}
+            className="text-blue-400 font-bold tracking-[0.2em] uppercase text-sm mb-4"
+          >
+            Established Since 1996
+          </motion.p>
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-4xl md:text-7xl font-extrabold text-white leading-tight mb-6"
+          >
+            PT. SINAR BANGUN <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">TATA SEMESTA</span>
+          </motion.h1>
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }} 
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mt-10"
+          >
+            <Link href="#produk" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all transform hover:scale-105 shadow-xl shadow-blue-500/20">
+              Jelajahi Produk
+            </Link>
+            <Link href="#kontak" className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white rounded-full font-bold hover:bg-white/20 transition-all">
+              Hubungi Kami
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      {/* End Image hero */}
+      {/* 2. TENTANG KAMI - MODERN STYLE */}
+     {/* 2. TENTANG KAMI - MODERN REFINED STYLE */}
+      <section className="py-24 container mx-auto px-4" id="tentang">
+        <div className="flex flex-col lg:flex-row gap-16 items-center max-w-6xl mx-auto">
+          
+          {/* Sisi Teks */}
+          <div className="flex-1 order-2 lg:order-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <span className="text-blue-600 font-extrabold tracking-[0.3em] uppercase text-xs mb-4 block">
+                Professional Distributor
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black mb-8 text-slate-900 leading-tight">
+                KOMITMEN KAMI PADA <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">
+                  KUALITAS MATERIAL
+                </span>
+              </h2>
+              
+              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p className="font-medium text-slate-800">
+                  Bergerak dalam bidang distribusi material besi untuk fabrikasi dan konstruksi sejak <span className="text-blue-600 font-bold">1996</span>.
+                </p>
+                <p>
+                  Sebagai distributor besi, kami selalu memberikan komitmen kepada pelanggan berupa pelayanan dan produk terbaik kepada konsumen. Kami percaya bahwa fondasi yang kuat dimulai dari material yang tepat.
+                </p>
+              </div>
 
-      {/* Tentang */}
-      <div className="mt-20 container mx-auto px-4" id="tentang">
-        {/* Accent bar di atas kartu */}
-        <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
-        <h1 className="text-4xl/normal text-center font-semibold ">TENTANG KAMI</h1>
-        <p className="text-base/loose text-center mt-5 italic">Dalam dunia konstruksi dan industri, kualitas material adalah kunci utama dalam menciptakan hasil yang tangguh dan berkelanjutan.</p>
-        <div className="mt-15 grid lg:grid-cols-2 md:grid-cols-1 gap-10">
-          <div className="">
-            <h1 className="font-semibold text-2xl mb-3">PT.Sinar Bangun Tata Semesta</h1>
-            <p className="text-base/loose">
-              Bergerak dalam bidang distribusi material besi, untuk fabrikasi dan konstruksi sejak 1996. Sebagai distributor besi, kami selalu memberikan komitmen, kepada pelanggan berupa pelayanan, dan produk terbaik kepada konsumen.
-            </p>
-            <div className="mt-6 mb-3">
-              <Link href={"#produk"} className="bg-blue-600 text-white px-6 py-2 rounded-full shadow-md hover:bg-blue-800 transition duration-300 ease-in-out">
-                Lihat Produk
-              </Link>
-            </div>
+              {/* Dekorasi Tambahan agar terlihat 'Kekinian' */}
+              <div className="mt-10 flex items-center gap-6">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center overflow-hidden">
+                      <i className="ri-user-fill text-slate-400 mt-2"></i>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm font-bold text-slate-500">
+                  Dipercaya oleh <span className="text-slate-900">500+ Perusahaan</span> di Indonesia
+                </p>
+              </div>
+            </motion.div>
           </div>
-          <div>
-            <video width="1080" autoPlay muted loop controls className="rounded-2xl shadow-lg border border-white/30">
-              <source src="/videos/iklan1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          
+          {/* Sisi Video (Kembali ke Awal: Autoplay & Muted) */}
+          <div className="flex-1 w-full order-1 lg:order-2">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              {/* Dekorasi Aksen Modern */}
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 opacity-50"></div>
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-cyan-100 rounded-2xl -z-10 opacity-50 rotate-12"></div>
+              
+              <div className="relative rounded-[2.5rem] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.2)] border-4 border-white">
+                <video 
+                  width="1080" autoPlay muted loop controls className="rounded-2xl shadow-lg border border-white/30"
+                >
+                  <source src="/videos/iklan1.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
+      </section>
+      {/* 3. LAYANAN - BENTO GRID */}
+      <section className="py-24 bg-slate-100/50" id="layanan">
+        <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-slate-900">Keunggulan Utama</h2>
+            <div className="h-1.5 bg-blue-600 w-24 mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="md:col-span-2 p-10 bg-white rounded-[2.5rem] shadow-sm border border-slate-200/60 hover:shadow-xl transition-all duration-500">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
+                <i className="ri-shield-check-fill ri-2x"></i>
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Komitmen Kualitas</h3>
+                <p className="text-slate-500 leading-relaxed text-lg">Setiap lembar besi dan baja melalui kontrol kualitas ketat untuk memastikan standar industri internasional terpenuhi tanpa kompromi.</p>
+            </div>
+            
+            <div className="p-10 bg-blue-600 rounded-[2.5rem] text-white shadow-xl shadow-blue-200 flex flex-col justify-between">
+                <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                <i className="ri-truck-fill ri-2x"></i>
+                </div>
+                <div>
+                    <h3 className="text-2xl font-bold mb-3">Logistik Cepat</h3>
+                    <p className="text-blue-100 leading-relaxed">Armada khusus yang terintegrasi untuk pengiriman tepat waktu ke seluruh penjuru area industri.</p>
+                </div>
+            </div>
+
+            <div className="p-10 bg-white rounded-[2.5rem] shadow-sm border border-slate-200/60 hover:shadow-xl transition-all text-center flex flex-col items-center justify-center">
+                <h3 className="text-5xl font-black text-blue-600 mb-2">A+</h3>
+                <p className="font-bold text-slate-800 italic uppercase tracking-widest text-sm">Rating Kepuasan</p>
+            </div>
+
+            <div className="md:col-span-2 p-10 bg-slate-900 rounded-[2.5rem] text-white overflow-hidden relative group">
+                <div className="relative z-10">
+                    <h3 className="text-2xl font-bold mb-3">Harga Kompetitif</h3>
+                    <p className="text-slate-400 max-w-md text-lg">Sistem distribusi langsung dari pabrik yang memungkinkan efisiensi biaya untuk proyek Anda.</p>
+                </div>
+                <i className="ri-line-chart-fill absolute -bottom-6 -right-6 text-white/5 text-[12rem] group-hover:rotate-12 transition-transform duration-700"></i>
+            </div>
+            </div>
+        </div>
+      </section>
+
+      {/* 4. PRODUK */}
+      <section className="py-24 bg-white" id="produk">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div className="max-w-xl text-left">
+              <h2 className="text-4xl font-bold mb-4">Produk Unggulan</h2>
+              <p className="text-slate-500">Katalog material premium untuk berbagai kebutuhan industri Anda.</p>
+            </div>
+            <button onClick={() => setShowAll(!showAll)} className="group flex items-center gap-3 font-bold text-blue-600 bg-blue-50 px-6 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-all">
+              {showAll ? "Tampilkan Sedikit" : "Lihat Semua Produk"} 
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {produkTampil.map((produk, idx) => (
+              <motion.div 
+                layout 
+                key={idx} 
+                className="group relative bg-slate-50 rounded-[2.5rem] p-5 border border-transparent hover:border-blue-100 hover:bg-white hover:shadow-2xl transition-all duration-500"
+              >
+                <div className="relative aspect-square overflow-hidden rounded-3xl mb-6 shadow-inner bg-white">
+                  <img src={produk.image} alt={produk.title} className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700" />
+                </div>
+                <h3 className="font-bold text-xl mb-6 px-2 text-slate-800 text-center">{produk.title}</h3>
+                <Link href={`/produk/${produk.slug}`} className="block w-full text-center py-4 rounded-2xl bg-slate-900 text-white font-bold hover:bg-blue-600 transition-all shadow-lg">
+                  Detail Produk
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </div>
-      {/* End Tentang */}
+      </section>
 
-      {/* Produk */}
-      <div className="mt-20 container mx-auto px-4" id="produk">
-        {/* Accent bar di atas kartu */}
-        <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
+      <BlogSection />
 
-        <h1 className="text-4xl/normal text-center font-semibold ">PRODUK</h1>
-        <p className="text-base/loose text-center italic">
-          Kami menghadirkan berbagai pilihan produk berkualitas tinggi yang dirancang untuk memenuhi standar industri dan konstruksi. Setiap produk kami dipilih dengan cermat untuk memastikan ketahanan, mutu, dan keandalan yang optimal bagi
-          kebutuhan proyek Anda.
-        </p>
-        <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {produkTampil.map((produk, idx) => (
-              <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-md">
-                <div className="relative w-full h-[200px]">
-                  <img src={produk.image} alt={produk.title} className="rounded-2xl p-3" />
+      {/* 5. KONTAK & MAPS */}
+      <section className="py-24 container mx-auto px-4" id="kontak">
+        <div className="bg-slate-900 rounded-[3.5rem] p-8 md:p-16 flex flex-col lg:flex-row gap-16 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[150px]"></div>
+          
+          <div className="flex-1 relative z-10">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Konsultasi <span className="text-blue-400">Gratis</span></h2>
+            <p className="text-slate-400 text-lg mb-10 leading-relaxed">Tim ahli kami siap membantu menghitung estimasi kebutuhan material proyek Anda secara akurat.</p>
+            
+            <div className="space-y-8">
+              <div className="flex items-start gap-5 text-white group">
+                <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
+                  <i className="ri-map-pin-2-fill text-blue-400 group-hover:text-white text-xl"></i>
                 </div>
-                <div className="p-4 text-center">
-                  <h2 className="font-semibold text-lg mb-2">{produk.title}</h2>
-                  <Link href={`/produk/${produk.slug}`}>
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-800 transition">Lihat Produk</button>
+                <div>
+                  <p className="font-bold text-lg">Kantor Pusat</p>
+                  <p className="text-slate-400 leading-relaxed mb-4">Jl. KH Zainul Arifin No.78, Jakarta Barat</p>
+                  <Link href="https://maps.google.com" target="_blank" className="text-blue-400 hover:text-white font-bold flex items-center gap-2 transition-all">
+                    Petunjuk Arah <i className="ri-external-link-line"></i>
                   </Link>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="mt-10 text-center">
-            <button onClick={() => setShowAll(!showAll)} className={`px-6 py-3 rounded-full shadow-md transition ${showAll ? "bg-red-600 text-white hover:bg-red-800" : "bg-blue-600 text-white hover:bg-blue-800"}`}>
-              {showAll ? "Tutup Produk ✕" : "View More Produk →"}
-            </button>
-          </div>
-        </div>
-      </div>
-      {/* End Produk */}
-
-      {/* Layanan */}
-      <div className="mt-10 lg:mt-0 mx-auto px-4">
-        <div className="grid lg:grid-cols-4 mt-32 gap-2 md:grid-cols-2 justify-items-center" id="layanan">
-          <div className="shadow-2xl p-7 rounded-2xl">
-            <i className="ri-service-fill ri-3x text-shadow-zinc-500"></i>
-            <p className="font-semibold text-2xl/normal mb-2">Komitmen</p>
-            <p className="text-base/loose">Sejak 1996, kami selalu konsisten menyediakan besi dan baja berkualitas tinggi dengan layanan yang dapat diandalkan dan bertanggung jawab.</p>
-          </div>
-          <div className="shadow-2xl p-7 rounded-2xl">
-            <i className="ri-verified-badge-fill ri-3x text-shadow-zinc-500"></i>
-            <p className="font-semibold text-2xl/normal mb-2">Terpercaya</p>
-            <p className="text-base/loose">Kami menjaga kepercayaan pelanggan melalui keaslian material, harga transparan, dan keamanan transaksi serta pengiriman.</p>
-          </div>
-          <div className="shadow-2xl p-7 rounded-2xl">
-            <i className="ri-price-tag-3-fill ri-3x text-shadow-zinc-500"></i>
-            <p className="font-semibold text-2xl/normal mb-2">Harga Bersaing</p>
-            <p className="text-base/loose">Dengan pengalaman dan jaringan luas, kami mampu menawarkan harga bersaing tanpa mengorbankan kualitas.</p>
-          </div>
-          <div className="shadow-2xl p-7 rounded-2xl">
-            <i className="ri-mail-send-fill ri-3x text-shadow-zinc-500"></i>
-            <p className="font-semibold text-2xl/normal mb-2">Pengiriman Cepat</p>
-            <p className="text-base/loose">Didukung armada sendiri dan sistem logistik efisien, kami pastikan pengiriman cepat, tepat, dan aman.</p>
-          </div>
-        </div>
-      </div>
-      {/* End Layanan */}
-
-      {/* Blog */}
-      <BlogSection />
-      {/* End Blog */}
-
-      {/* Kontak */}
-      <div className="mt-20 sm:p-10 p-0 container mx-auto px-4" id="kontak">
-        {/* Accent bar di atas kartu */}
-        <div className="h-1 bg-blue-600 w-16 rounded-br-full mb-20"></div>
-
-        <h1 className="text-4xl/normal text-center font-semibold ">KONTAK</h1>
-        <p className="text-base/loose text-center italic">Hubungi Kami, untuk mendapatkan penawaran terbaik hari ini !.</p>
-
-        <div className="mt-10 grid lg:grid-cols-2 grid-cols-1 gap-4">
-          <form action="https://formsubmit.co/primaakusumah.sbts@gmail.com" method="POST" className="shadow-2xl rounded-md p-10 w-full h-full flex flex-col justify-between" autoComplete="off">
-            <div className="flex flex-col gap-6">
-              <div className="flex flex-col gap-2">
-                <label className="font-semibold">Nama Lengkap</label>
-                <input type="text" name="nama" placeholder="Masukkan Nama Lengkap Anda..." className="border border-blue-400 p-2 rounded-md" required />
+            <div className="mt-12 relative group cursor-pointer overflow-hidden rounded-[2.5rem] border border-white/5 shadow-2xl">
+              <Link href="https://maps.google.com" target="_blank" className="absolute inset-0 z-20"></Link>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.790903332468!2d106.812345!3d-6.158765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMDknMzEuNiJTIDEwNsKwNDgnNDQuNCJF!5e0!3m2!1sid!2sid!4v1620000000000"
+                width="100%" height="280" className="grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700" loading="lazy"
+              ></iframe>
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition-opacity">
+                <span className="bg-white text-slate-900 px-6 py-2 rounded-full font-bold text-sm shadow-xl">Klik Untuk Navigasi</span>
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-semibold">Email</label>
-                <input type="email" name="email" placeholder="Masukkan Email Anda..." className="border border-blue-400 p-2 rounded-md" required />
+            </div>
+          </div>
+
+          <form action="https://formsubmit.co/primaakusumah.sbts@gmail.com" method="POST" className="flex-1 bg-white p-10 rounded-[2.5rem] shadow-2xl relative z-10">
+            <div className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700 ml-1">Nama Lengkap</label>
+                    <input type="text" name="nama" placeholder="Budi Santoso" className="w-full bg-slate-50 border-2 border-transparent p-4 rounded-2xl focus:border-blue-600 focus:bg-white transition-all outline-none" required />
+                </div>
+                <div className="space-y-2">
+                    <label className="text-sm font-bold text-slate-700 ml-1">Alamat Email</label>
+                    <input type="email" name="email" placeholder="budi@perusahaan.com" className="w-full bg-slate-50 border-2 border-transparent p-4 rounded-2xl focus:border-blue-600 focus:bg-white transition-all outline-none" required />
+                </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <label className="font-semibold">Nomer Telpon</label>
-                <input type="number" name="noHp" placeholder="Masukkan Nomer Telpon Anda..." className="border border-blue-400 p-2 rounded-md" required />
+              <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 ml-1">WhatsApp</label>
+                  <input type="number" name="noHp" placeholder="08123456789" className="w-full bg-slate-50 border-2 border-transparent p-4 rounded-2xl focus:border-blue-600 focus:bg-white transition-all outline-none" required />
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="pesan" className="font-semibold">
-                  Pesan
-                </label>
-                <textarea name="pesan" id="pesan" cols="65" rows="7" placeholder="Pesan Anda..." className="border border-blue-400 p-2 rounded-md" required></textarea>
+              <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700 ml-1">Kebutuhan Material</label>
+                  <textarea name="pesan" rows="4" placeholder="Sebutkan jenis material dan jumlah yang dibutuhkan..." className="w-full bg-slate-50 border-2 border-transparent p-4 rounded-2xl focus:border-blue-600 focus:bg-white transition-all outline-none" required></textarea>
               </div>
-              <div className="text-center">
-                <button type="submit" className="bg-blue-800 text-white p-3 rounded-lg w-full cursor-pointer border border-blue-400  hover:bg-white hover:text-blue-600">
-                  Kirim Pesan
-                </button>
-              </div>
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-blue-500/30 transition-all active:scale-95 flex items-center justify-center gap-3">
+                Kirim Sekarang <i className="ri-send-plane-fill"></i>
+              </button>
             </div>
           </form>
+        </div>
+      </section>
 
-          <div className="shadow-2xl p-10 sm:w-fit mx-auto rounded-md max-w w-full">
-            <h2 className="font-semibold">Alamat Kami</h2>
-            <p>H. zaenal, Jl. K Utara Jl. Kyai Haji Zainul Arifin No.78, RT.3/RW.14, Tanah Sereal, Jakarta, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11210</p>
-            <div style={{ marginTop: "20px" }}>
-              <h2 className="font-semibold">Maps</h2>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7733392126556!2d106.80590337586762!3d-6.1611035603854996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f675ce70a4d5%3A0x77c211c1d2d4ff01!2sPT%20Sinar%20Bangun%20Tata%20Semesta!5e0!3m2!1sid!2sid!4v1751287760364!5m2!1sid!2sid"
-                position="absolute"
-                width="100%"
-                height="400"
-                loading="lazy"
-                className="mt-1.5"
-              ></iframe>
-              <div className="mt-7">
-                <Link href={"https://maps.app.goo.gl/qGPEZErM2m9DvbfL9"} target="_blank" className="bg-blue-800 border border-blue-800 text-white w-fit rounded-md p-3 hover:bg-white hover:text-blue-800 cursor-pointer">
-                  PT.Sinar Bangun Tata Semesta
-                </Link>
-              </div>
-            </div>
+      {/* FOOTER */}
+      <footer className="bg-white py-20 border-t border-slate-100">
+        <div className="container mx-auto px-4 text-center">
+          <img src={DataImage.logo1} alt="Logo" className="w-16 h-16 mx-auto mb-6 grayscale hover:grayscale-0 transition-all duration-500" />
+          <h2 className="text-xl font-black mb-2 uppercase tracking-tighter">Sinar Bangun Tata Semesta</h2>
+          <p className="text-slate-400 text-sm max-w-sm mx-auto mb-10">Distributor Besi & Baja berkualitas sejak 1996 untuk solusi konstruksi Indonesia.</p>
+          <div className="flex justify-center gap-8 mb-12 flex-wrap text-sm font-bold uppercase tracking-widest text-slate-400">
+            <Link href="#tentang" className="hover:text-blue-600 transition">Tentang</Link>
+            <Link href="#produk" className="hover:text-blue-600 transition">Produk</Link>
+            <Link href="#layanan" className="hover:text-blue-600 transition">Layanan</Link>
+            <Link href="#kontak" className="hover:text-blue-600 transition">Kontak</Link>
           </div>
         </div>
-      </div>
-      {/* End Kontak */}
-
-      {/* Bottom */}
-      <div className="grid lg:grid-cols-2 gap-10 mt-20 container mx-auto px-4 mb-20">
-        {/* Kolom 1 */}
-        <div className="flex-col md:items-start lg:text-left text-center items-center">
-          <div className="flex lg:flex-row flex-col gap-2 items-center">
-            <img src={DataImage.logo1} alt="Logo Image" className="w-10 h-10 relative" />
-            <div className="flex-col md:flex-row">
-              <h2 className="sm:text-2xl/tight text-2xl font-bold">PT. SINAR BANGUN TATA SEMESTA</h2>
-              <p className="font-semibold text-xs italic font-serif">General steel supplier</p>
-            </div>
-          </div>
-          <p className="mt-2 text-zinc-400">
-            Sejak 1996, kami berkomitmen menyediakan besi dan baja berkualitas tinggi untuk berbagai kebutuhan industri dan konstruksi. Pelayanan yang konsisten, akurat, dan bertanggung jawab menjadi nilai utama kami demi kepuasan
-            pelanggan.
-          </p>
-
-          <div className="flex gap-3 mt-4 justify-center lg:justify-start">
-            <a href="https://www.linkedin.com/in/prima-aditya-kusumah-0aa7871a4/">
-              <i className="ri-linkedin-box-fill ri-2x"></i>
-            </a>
-            <a href="https://www.instagram.com/sinarbangun_id/">
-              <i className="ri-instagram-fill ri-2x"></i>
-            </a>
-            <a href="https://wa.me/6282114064622">
-              <i className="ri-whatsapp-fill ri-2x"></i>
-            </a>
-          </div>
-        </div>
-
-        {/* Kolom 2 */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 justify-between text-center sm:text-left">
-          <div>
-            <a href="#produk" className="font-semibold">
-              Produk
-            </a>
-            <ul className="opacity-75 text-zinc-400 mt-4 gap-2 italic">
-              <li>SPHC</li>
-              <li>SPCC</li>
-              <li>SPHC-PO</li>
-              <li>Checkered</li>
-            </ul>
-          </div>
-          <div>
-            <a href="#tentang" className="font-semibold">
-              Tentang
-            </a>
-            <ul className="opacity-75 text-zinc-400 mt-4 gap-2 italic">
-              <li>Telpon</li>
-              <li>Alamat</li>
-              <li>Maps</li>
-              <li>Marketing</li>
-            </ul>
-          </div>
-          <div>
-            <a href="blog" className="font-semibold">
-              Blogs
-            </a>
-            <ul className="opacity-75 text-zinc-400 mt-4 gap-2 italic">
-              <li>Terbaru</li>
-              <li>Rating</li>
-              <li>Terbaca</li>
-              <li>Terbaik</li>
-            </ul>
-          </div>
-          <div>
-            <a href="#produk" className="font-semibold">
-              Produk
-            </a>
-            <ul className="opacity-75 text-zinc-400 mt-4 gap-4 italic">
-              <li>UNP</li>
-              <li>Pipa</li>
-              <li>Siku</li>
-              <li>Hollow</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      {/* End Bottom */}
-    </>
+      </footer>
+    </div>
   );
 }
